@@ -1,0 +1,111 @@
+.titulo{
+    height: 5rem;
+    border-bottom: 2px solid;
+    background-color: #55142C;
+}
+.icono{
+    flex-grow: 0.5;
+    text-align: right;
+}
+.text{
+    flex-grow: 10;
+    color: white;
+}
+.icono2{
+    flex-grow: 5;
+    text-align: end;
+    padding-right: 20px;
+}
+.menu{
+    width: 23em;
+    border-right: 2px solid;
+    margin: 0;
+    padding: 0;
+    background-color: #bf8a3d;
+}
+.pagina{
+    flex-grow: 6;
+}
+.row{
+    display: flex;
+}
+body{
+    margin: 0;
+}
+.coli{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+.opc{
+    height: 33em;
+    border-bottom:2px solid;
+    margin: 0;
+    padding: 0;
+    width: 23em;
+}
+.ipn{
+    width: 110px;
+    height: 70px;
+    margin-top: 7px;
+    padding:0;
+}
+.cics{
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+}
+.center{
+    text-align: left;
+    margin-right: -100px;
+}
+ul{
+    list-style:none;
+    margin-top: 30px;
+    padding: 0;
+}
+li{
+    width: 23em;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+li:hover{
+    background-color: #af7722;
+}
+.tab{
+    padding-left: 60px;
+}
+.subtitle{
+    border-bottom: 2px solid;
+}
+li{
+    color: #000000;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
+
+.card{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #55142C;
+    color:rgb(255, 255, 255);
+    width: 700px;
+    padding: 20px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.377);
+    border-radius: 20px;            
+}
+hr{
+    height: 2px;
+    border: 0ch;
+    background-color:darkolivegreen;
+}
+.principal{
+    background-image: url("https://i.ytimg.com/vi/TnFI49739Xs/maxresdefault.jpg");
+    height: 35em;
+    background-repeat: no-repeat;
+}
