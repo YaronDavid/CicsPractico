@@ -1,3 +1,10 @@
+<?php
+    include_once("conexion.php");
+
+    $conn=Cconection::conectar();
+
+?>
+
 <html>
     <head> 
         <title>
@@ -5,6 +12,7 @@
         </title>
         <link rel="stylesheet" href="./styles/inde.css"/>
         <link rel="stylesheet" href="./styles/inicio.css"/>
+        
     </head>
     <body>
         <div class="titulo">
@@ -25,7 +33,7 @@
                 <div class="rowi opc">
                     <ul class="center">
                         <a href="./index.php"><li class="boton">Pagina principal</li></a>
-                        <li>Restablecer contraseña</li>
+                        <a href="./restablecerContraseña.php"><li>Restablecer contraseña</li></a>
                     </ul>
                 </div>
                 <div class="rowi info">
