@@ -1,0 +1,151 @@
+/*.titulo{
+    height: 5rem;
+    border-bottom: 2px solid;
+    
+}
+
+.text{
+    flex-grow: 10;
+    color: red;
+}
+
+.menu{
+    width: 23em;
+    border-right: 2px solid;
+    margin: 0;
+    padding: 0;
+    
+}
+.pagina{
+    flex-grow: 6;
+}
+.row{|
+    display: flex;
+}
+body{
+    margin: 0;
+}
+.coli{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+.opc{
+    height: 33em;
+    border-bottom:2px solid;
+    margin: 0;
+    padding: 0;
+    width: 23em;
+}
+
+
+.center{
+    text-align: left;
+    margin-right: -100px;
+}
+
+.tab{
+    padding-left: 60px;
+}
+.subtitle{
+    border-bottom: 2px solid;
+}
+
+
+
+body{
+    color: blue;
+    
+}*/
+
+.navegacion{
+    background-color: #55142C;
+    height: 10vh;
+}
+.main{
+    height: 90vh;
+}
+.icono{
+    flex-grow: 0.5;
+    text-align: left;
+}
+.ipn{
+    width: 110px;
+    height: 70px;
+    margin-bottom: 2px;
+    padding:0;
+}
+.icono2{
+    flex-grow: 5;
+    text-align:center;
+    padding-right: 20px;
+}
+.cics{
+    width: 60px;
+    height: 60px;
+    margin-top: 4px;
+}
+.titulo{
+    color:white;
+    font-family: 'Times New Roman';
+}
+.cicsPractico{
+    margin-top: 10px;
+}
+.aside{
+    background-color: #bf8a3d;
+    height: 100%;
+}
+ul{
+    list-style:none;
+    margin-top: 30px;
+    padding: 0;
+}
+li{
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #000000;
+}
+li:hover{
+    background-color: #af7722;
+}
+.opciones, .info{
+    border: 2px solid black;
+    border-bottom: 0px;
+}
+.opciones{
+    height: 89%;
+}
+a, a:link, a:visited,  a:hover, a:active{
+    text-decoration: none;
+}
+.subtitulo{
+    height: 12%;
+    border-bottom: 2px solid black;
+}
+.subtitulo h1{
+    margin-top: 10px;
+    font-family: Arial Black;
+    font: bold;
+}
+.principal{
+    height: 88%;
+}
+.mycard{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #55142C;
+    color:rgb(255, 255, 255);
+    width: 75vw;
+    padding: 20px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.377);
+    border-radius: 20px;      
+}
+
+.principal{
+    background-image: url("https://i.ytimg.com/vi/TnFI49739Xs/maxresdefault.jpg");
+    background-repeat: no-repeat;
+}
