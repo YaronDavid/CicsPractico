@@ -4,11 +4,7 @@ input[type="text"]{
     margin-top: 3px;
     margin-bottom: 3px;
 }
-label{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 25px;
-    color: black;
-}
+
 input[type="submit"]{
     margin-top: 10px;
     background-color: rgb(180, 180, 180);
