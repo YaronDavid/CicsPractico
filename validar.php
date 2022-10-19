@@ -1,10 +1,11 @@
 <?php
+session_start();
+
 include_once("services/conexion.php");
 
 $usuario = $_POST['usuario'];
 $pass = $_POST['contrasena'];
-/*session_start():
-$_SESSION['usuario'] = $usuario;*/
+
 
 $consulta = "SELECT * FROM usuario WHERE nombre='$usuario' and contrasenia = '$pass'";
 
@@ -16,6 +17,9 @@ $query -> execute();
 $result = $query -> fetchAll();
 
 if($result){
+    foreach($result as $row){
+        $_SESSION['idUsuario'] = $row['idUsuario'];
+    }
     header("location:home.php");
 }else{
     ?>
