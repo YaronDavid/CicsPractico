@@ -1,16 +1,7 @@
 div[class="mycard"]{
-    height: 40vh;
+    height: 53vh;
     width: 60vw;
     background-color: #ffffff;
-}
-.mycard h1{
-    margin-top: 10px;
-    color: black;
-}
-hr{
-    height: 2px;
-    border: 0ch;
-    background-color:black
 }
 form a{
     margin-left: 20px;
@@ -25,5 +16,5 @@ a:visited{
 .mycard form div label{
     color:black;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 25px;
+    font-size: 20px;
 }

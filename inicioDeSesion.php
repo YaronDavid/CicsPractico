@@ -3,7 +3,7 @@
         <title>
             CICSPractico
         </title>
-        <link rel="stylesheet" href="./styles/indee.css"/>
+        <link rel="stylesheet" href="./styles/in.css"/>
         <link rel="stylesheet" href="./styles/ini.css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     </head>
@@ -26,13 +26,13 @@
             <div class="col-2 aside">
                 <div class="row opciones">
                     <ul class="center">
-                        <a href="./index.php"><li class="boton">Pagina principal</li></a>
+                        <li id="actual" class="boton">Inicio de sesion</li>
                         <a href="./restablecerContraseña.php"><li>Restablecer contraseña</li></a>
                     </ul>
                 </div>
                 <div class="row info">
                     <ul class="center">
-                        <li>Info</li>
+                        <a href="./index.php"><li>Info</li></a>
                     </ul>
                 </div>
             </div>
@@ -44,8 +44,7 @@
                 <div class="row principal">
                     <div class="container">
                         <div class="mycard">
-                            <h1>Inicio de sesión</h1>
-                            <hr/>
+                            
                             <form action="validar.php" method="post">
                                 <div class="form-group">
                                     <label for="usuario">Usuario</label>
