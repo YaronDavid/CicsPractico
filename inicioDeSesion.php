@@ -47,8 +47,8 @@
                             
                             <form action="validar.php" method="post">
                                 <div class="form-group">
-                                    <label for="usuario">Usuario</label>
-                                    <input class="form-control"type="text" id="usuario" name="usuario" required/>
+                                    <label for="correo">Correo</label>
+                                    <input class="form-control"type="text" id="correo" name="correo" required/>
                                 </div>
                                 <div class="form-group">
                                     <label for="contrasena">Contraseña</label>

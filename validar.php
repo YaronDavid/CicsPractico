@@ -3,11 +3,11 @@ session_start();
 
 include_once("services/conexion.php");
 
-$usuario = $_POST['usuario'];
+$correo = $_POST['correo'];
 $pass = $_POST['contrasena'];
 
 
-$consulta = "SELECT * FROM usuario WHERE nombre='$usuario' and contrasenia = '$pass'";
+$consulta = "SELECT * FROM usuario WHERE correo='$correo' and contraseña = '$pass'";
 
 $conexion = new CConection();
 $conn = $conexion->conectar();

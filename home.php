@@ -2,6 +2,13 @@
 session_start();
 include_once("services/conexion.php");
 $id = $_SESSION['idUsuario'];
+
+if (!isset($_SESSION['idUsuario'])){
+
+    header('location: index.php');
+}
+
+
 $consulta = "SELECT * FROM usuario WHERE idUsuario='$id'";
 
 $conexion = new CConection();
@@ -21,6 +28,7 @@ $tipo='';
             CICSPractico
         </title>
         <link rel="stylesheet" href="./styles/in.css"/>
+        <link rel="stylesheet" href="./styles/home.css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     </head>
     <body>
@@ -83,7 +91,12 @@ $tipo='';
             
             <div class="col-10">
                 <div class="row subtitulo">
-                    <h1>Información del sistema</h1>
+                    <div class="col-10">
+                        <h1>Información del sistema</h1>
+                    </div>
+                    <div class="col-2">
+                        <a class="btn" id="cerrarSesion" href="destruirSesion.php">Cerrar sesion</a>
+                    </div>
                 </div>
                 <div class="row principal">
                     <div class="container">
