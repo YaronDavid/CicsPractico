@@ -1,0 +1,21 @@
+div[class="mycard"]{
+    height: 45vh;
+    width: 45vw;
+    background-color: #ffffff;
+    margin-left: 50px;
+}
+form a{
+    margin-left: 20px;
+    text-decoration: underline;
+    font-size: medium;
+    color: black;
+}
+a:visited{
+    color: black;
+}
+
+.mycard form div label{
+    color:black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}

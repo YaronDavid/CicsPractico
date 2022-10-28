@@ -39,7 +39,7 @@
 
             <div class="col-10">
                 <div class="row subtitulo">
-                    <h1>Pagina principal</h1>
+                    <h1>Inicio de sesion</h1>
                 </div>
                 <div class="row principal">
                     <div class="container">
