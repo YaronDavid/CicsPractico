@@ -50,7 +50,7 @@ $tipo='';
             <div class="col-2 aside">
                 <div class="row opciones">
                     <ul class="center">
-                        <li id="actual">Menu Principal</li>
+                        <a href="./home.php"><li>Menu Principal</li></a>
                         <?php 
                         foreach($result as $row){
                             $tipo=$row["tipoUsuario"];
@@ -78,7 +78,6 @@ $tipo='';
                             <a href="./proceso.php"><li>Proceso de practicas</li></a>
                             <a href="./consultarInformacion.php"><li>consultar Informacion</li></a>
                             <a href="./cambiarContrasena.php"><li>Cambiar contraseña</li></a>
-                            <a href="./nuevoUsuario.php"><li>Crear Usuario</li></a>
                         <?php } ?>
                     </ul>
                 </div>
@@ -93,7 +92,7 @@ $tipo='';
             <div class="col-10">
                 <div class="row subtitulo">
                     <div class="col-10">
-                        <h1>Información del sistema</h1>
+                        <h1>Cambiar contraseña</h1>
                     </div>
                     <div class="col-2">
                         <a class="btn" id="cerrarSesion" href="destruirSesion.php">Cerrar sesion</a>
@@ -102,16 +101,23 @@ $tipo='';
                 <div class="row principal">
                     <div class="container">
                         <div class="mycard">
-                            <h1>Bienvenido</h1>
-                            <hr/>
-                            <p>Esta pagina tiene es un proyecto que tiene como finalidad agilizar el proceso para la programación y
-                                seguimineto de las practicas y visitas escolares del Centro Interdisciplinario de Ciencias de la Salud
-                                Unidad Santo Tomás del Instituto Politenico Nacional.
-                            </p>
-                            <p>
-                                En caso de contar con una cuenta favor de hacer clic en una de las opciones del lado izquierdo
-                                de lo contrario por favor acude con el coordinador de practicas y visitas para poder crear una cuenta nueva
-                            </p>
+                            <form action="validarCambio.php" method="post">
+                                <div class="form-group">
+                                    <label for="actual">Contraseña actual</label>
+                                    <input class="form-control"type="text" id="actual" name="actual" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nueva">Nueva contraseña</label>
+                                    <input class="form-control" type="text" id="nueva" name="nueva" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vefiricar">Repita nueva contraseña</label>
+                                    <input class="form-control" type="text" id="verificar" name="verificar" required/>
+                                </div><br/>
+                                    <input type="submit" value="Iniciar sesión" class="btn btn-primary"/>
+                                    <a href="./restablecer.php" class="res">No recuerdo mi contraseña</a>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

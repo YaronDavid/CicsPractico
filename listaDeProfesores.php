@@ -18,7 +18,6 @@ $query = $conn -> prepare($consulta);
 $query -> execute();
 $result = $query -> fetchAll();
 
-$tipo=0;
 $idUsuario=0;
 
 ?>
