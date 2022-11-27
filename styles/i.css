@@ -52,10 +52,10 @@ li{
 }
 .opciones, .info{
     border: 2px solid black;
-    border-bottom: 0px;
 }
 .opciones{
-    height: 83%;
+    height: 81%;
+    border-bottom: 0px;
 }
 a, a:link, a:visited,  a:hover, a:active{
     text-decoration: none;
