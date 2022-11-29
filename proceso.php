@@ -28,7 +28,7 @@ $tipo='';
             CICSPractico
         </title>
         <link rel="stylesheet" href="./styles/i.css"/>
-        <link rel="stylesheet" href="./styles/home.css"/>
+        <link rel="stylesheet" href="./styles/proceso.css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     </head>
     <body>
@@ -50,32 +50,28 @@ $tipo='';
             <div class="col-2 aside">
                 <div class="row opciones">
                     <ul class="center">
-                        <li id="actual">Menu Principal</li>
+                        <a href="./home.php"><li>Menu Principal</li></a>
                         <?php 
                         foreach($result as $row){
                             $tipo=$row["tipoUsuario"];
                         }
-                        if($tipo==0){
-                        ?>
-                            <a href="./consultarInformacion.php"><li>consultar Informacion</li></a>
-                        <?php }
                         if($tipo==1){
                         ?>    
-                            <a href="./proceso.php"><li>Proceso de practicas</li></a>
+                            <li id="actual">Proceso de practicas</li>
                             <a href="./misPracticas.php"><li>Mis practicas</li></a>
                             <a href="./cambiarContrasena.php"><li>Cambiar contraseña</li></a>
                         <?php }
                         if($tipo==2){
                         ?>
                             <a href="./listaDeProfesores.php"><li>Profesores</li></a>
-                            <a href="./proceso.php"><li>Proceso de practicas</li></a>
+                            <li id="actual">Proceso de practicas</li>
                             <a href="./consultarInformacion.php"><li>consultar Informacion</li></a>
                             <a href="./cambiarContrasena.php"><li>Cambiar contraseña</li></a>
                         <?php }
                         if($tipo==3){
                         ?>
                             <a href="./listaDeUsuarios.php"><li>Usuarios</li></a>
-                            <a href="./proceso.php"><li>Proceso de practicas</li></a>
+                            <li id="actual">Proceso de practicas</li>
                             <a href="./consultarInformacion.php"><li>consultar Informacion</li></a>
                             <a href="./cambiarContrasena.php"><li>Cambiar contraseña</li></a>
                             <a href="./nuevoUsuario.php"><li>Crear Usuario</li></a>
@@ -93,7 +89,7 @@ $tipo='';
             <div class="col-10">
                 <div class="row subtitulo">
                     <div class="col-10">
-                        <h1>Información del sistema</h1>
+                        <h1>Proceso de practicas</h1>
                     </div>
                     <div class="col-2">
                         <a class="btn" id="cerrarSesion" href="destruirSesion.php">Cerrar sesion</a>
@@ -102,17 +98,31 @@ $tipo='';
                 <div class="row principal">
                     <div class="container">
                         <div class="mycard">
-                            <h1>Bienvenido</h1>
-                            <hr/>
-                            <p>Esta pagina tiene es un proyecto que tiene como finalidad agilizar el proceso para la programación y
-                                seguimineto de las practicas y visitas escolares del Centro Interdisciplinario de Ciencias de la Salud
-                                Unidad Santo Tomás del Instituto Politenico Nacional.
-                            </p>
-                            <p>
-                                En caso de contar con una cuenta favor de hacer clic en una de las opciones del lado izquierdo
-                                de lo contrario por favor acude con el coordinador de practicas y visitas para poder crear una cuenta nueva
-                            </p>
-                            <a href="privacidad.php">Aviso de privacidad</a>
+                            <h1>Proceso de practicas</h1>
+                            <?php
+                               $fecha = date("Y-m-d H:i:s");
+                               $consulta = "SELECT * FROM bitacora WHERE fechaInicio < '$fecha' AND fechaFin > '$fecha'";
+                               $query = $conn -> prepare($consulta);
+                               $query -> execute();
+                               $result = $query -> fetchAll();
+                               if($result){
+                                foreach($result as $row){
+                                    $_SESSION['idBitacora'] = $row['idBitacora'];
+                                ?>
+                                    <h4>Fecha Inicio: <?php echo $row["fechaInicio"];?> </h4>
+                                    <h4>Fecha Termino: <?php echo $row["fechaFin"];?> </h4>
+                                    <?php if($tipo==1){?>
+                                        <a href="nuevaPractica.php">Registrar nueva practica</a>
+                                    <?php }if($tipo==2||$tipo==3){?>
+                                        <a href="consultarPracticas.php">Consultar practicas</a>
+                                    <?php }?>
+                                <?php
+                                }
+                               }else{
+                                echo "bola";
+                               }
+                               
+                            ?>
                         </div>
                     </div>
                 </div>

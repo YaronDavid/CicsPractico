@@ -51,8 +51,9 @@
                             </p>
                             <p>
                                 En caso de contar con una cuenta favor de hacer clic en una de las opciones del lado izquierdo
-                                de lo contrario por favor acude con el coordinador de practicas y visitas para poder crear una cuenta nueva
-                            </p>
+                                de lo contrario por favor acude con el coordinador de practicas y visitas para poder crear una cuenta nueva.</p>
+                                <a href="privacidad.php">Aviso de privacidad</a>
+                            
                         </div>
                     </div>
                 </div>

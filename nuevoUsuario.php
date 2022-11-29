@@ -3,7 +3,8 @@
         <title>
             CICSPractico
         </title>
-        <link rel="stylesheet" href="./styles/in.css"/>
+        <link rel="stylesheet" href="./styles/i.css"/>
+        <link rel="stylesheet" href="./styles/nue.css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     </head>
     <body>
@@ -25,10 +26,12 @@
             <div class="col-2 aside">
                 <div class="row opciones">
                     <ul class="center">
+                            <a href="./home.php"><li>Menu principal</li></a>
                             <a href="./listaDeUsuarios.php"><li>Usuarios</li></a>
                             <a href="./proceso.php"><li>Proceso de practicas</li></a>
                             <a href="./consultarInformacion.php"><li>consultar Informacion</li></a>
                             <a href="./cambiarContrasena.php"><li>Cambiar contraseña</li></a>
+                            <li id="actual">Crear Usuario</li>
                     </ul>
                 </div>
                 <div class="row info">
@@ -41,68 +44,85 @@
             
             <div class="col-10">
                 <div class="row subtitulo">
-                    <h1>Nuevo usuario</h1>
+                    <div class="col-10">
+                        <h1>Nuevo usuario</h1>
+                    </div>
+                    <div class="col-2">
+                        <a class="btn" id="cerrarSesion" href="destruirSesion.php">Cerrar sesion</a>
+                    </div>
                 </div>
                 <div class="row principal">
                     <div class="container">
                         <div class="mycard">
                         <form action="crearUsuario.php" method="post" id="nuevoUsuario">
-                                <div class="form-group row">
-                                    <div class="col-8">
-                                        <label for="tipo">Seleccione tipo de usuario</label>
-                                        <select name="tipo" id="tipo" form="nuevoUsuario">
-                                        <option value="0">Lector</option>
-                                        <option value="1">Profesor</option>
-                                        <option value="2">Administrador</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-4">
-                                        <label for="contrasena">Contraseña</label>
-                                        <input class="form-control" type="text" id="contrasena" name="contrasena" required/>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-8">
+                            <div class="form-group row">
+                                <div class="col-12">
                                         <label for="nombre">Nombre</label>
                                         <input class="form-control" type="text" id="nombre" name="nombre" required/>
                                     
-                                    </div>
-                                    <div class="col-4">
-                                        <label for="contrasenaRep">Repita contraseña</label>
-                                        <input class="form-control" type="text" id="contrasenaRep" name="contrasenaRep" required/>
-                                    </div>
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col-8">
-                                        <label for="pregunta">Elija su pregunta de seguridad</label>
-                                        <select name="pregunta" id="pregunta" form="nuevoUsuario">
-                                        <option value="0">0</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-4">
-                                        <label for="respuesta">Respuesta a la pregunta de seguridad</label>
-                                        <input class="form-control" type="text" id="respuesta" name="respuesta" required/>
-                                    </div>
-                                </div>
-                                <div class="form-group">
+                                <div class="col-6">
                                     <label for="apPat">Apellido paterno</label>
                                     <input class="form-control" type="text" id="apPat" name="apPat" required/>
                                 </div>
-                                <div class="form-group">
+                                <div class="col-6">
                                     <label for="apMat">Apellido materno</label>
                                     <input class="form-control" type="text" id="apMat" name="apMat" required/>
                                 </div>
-                                <div class="form-group">
+                            </div>
+                            <div class="form-group">
+                                <label for="correo">Correo</label>
+                                <input class="form-control" type="text" id="correo" name="correo" required/>
+                            </div><br/>
+                            <div class="form-group row">
+                                <div class="col-6">
+                                    <label for="tipo">Seleccione tipo de usuario</label>
+                                    <select name="tipo" id="tipo" form="nuevoUsuario">
+                                        <option value="" disabled selected>Seleccione una opcion</option>
+                                        <option value="0">Lector</option>
+                                        <option value="1">Profesor</option>
+                                        <option value="2">Administrador</option>
+                                    </select>
+                                </div>
+                                <div class="col-6">
                                     <label>Fecha de nacimiento</input>
                                     <input type="date" name="fecha" id="fecha" required/>
                                 </div>
-                                <div class="form-group">
-                                    <label for="correo">Correo</label>
-                                    <input class="form-control" type="text" id="correo" name="correo" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="contrasena">Contraseña</label>
+                                <input class="form-control" type="text" id="contrasena" name="contrasena" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="contrasenaRep">Repita contraseña</label>
+                                <input class="form-control" type="text" id="contrasenaRep" name="contrasenaRep" required/>
+                            </div><br/>
+                            <div class="form-group row">
+                                <div class="col-4">
+                                    <label for="pregunta">Elija su pregunta de seguridad</label></br>
+                                    <select name="pregunta" id="pregunta" form="nuevoUsuario">
+                                        <option value="" disabled selected>Seleccione una opción</option>
+                                        <option value="0">Nombre de su mascota</option>
+                                        <option value="1">Primer relación</option>
+                                        <option value="2">Nombre de su mamá</option>
+                                    </select>
                                 </div>
-                                <br/>
+                                <div class="col-8">
+                                    <label for="respuesta">Respuesta a la pregunta de seguridad</label>
+                                    <input class="form-control" type="text" id="respuesta" name="respuesta" required/>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-6">
+                                    <label for="numEm">Numero de empleado</label>
+                                    <input class="form-control" type="text" id="numEm" name="numEm" placeHolder="Solo en caso de crear un profesor"/>
+                                </div>
+                                <div class="col-6">
+                                    <label for="master">Clave Maestra</label>
+                                    <input class="form-control" type="text" id="master" name="master" placeHolder="Solo en caso de crear a un nuevo Super Usuario"/>
+                                </div>
+                            </div>
+                            <br/>
                                     <a href="./home.php" class="res">Regresar</a>
                                     <input type="submit" value="Crear Usuario" class="btn btn-primary"/>
                                 </div>

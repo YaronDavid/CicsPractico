@@ -1,0 +1,9 @@
+.mycard{
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+#cerrarSesion{
+    margin-top: 16px;
+    background-color: #0e1225;
+    color: white;
+}

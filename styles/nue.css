@@ -1,0 +1,11 @@
+.main{
+    height: 107vh;
+}
+.opciones{
+    height: 84%;
+}
+#cerrarSesion{
+    margin-top: 16px;
+    background-color: #0e1225;
+    color: white;
+}

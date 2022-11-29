@@ -87,4 +87,5 @@ a, a:link, a:visited,  a:hover, a:active{
 .principal{
     background-image: url("https://i.ytimg.com/vi/TnFI49739Xs/maxresdefault.jpg");
     background-repeat: no-repeat;
+    background-size: cover;
 }

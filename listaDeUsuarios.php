@@ -101,7 +101,7 @@ $idUsuario=0;
                                         <?php
                                             foreach($result as $row){
                                                 $tipo=$row["tipoUsuario"];
-                                                $idUsuario=$row["idUsuario"];
+                                                $nombre=$row["nombre"];
                                                 if($tipo==0){
                                                     $tipo="Lector";
                                                 }if($tipo==1){
@@ -111,7 +111,7 @@ $idUsuario=0;
                                                 }
                                         ?>
                                                 <tr>
-                                                    <td><?php echo $idUsuario?></td>
+                                                    <td><?php echo $nombre?></td>
                                                     <td><?php echo $tipo?></td>
                                                     
                                                     <td><a href="./editarUsuario">Editar</a></td>
