@@ -1,9 +1,9 @@
 <?php
 session_start();
 include_once("services/conexion.php");
-$id = $_SESSION['idUsuario'];
+$id = $_SESSION['idUsuario'];//recuperamos el id que devolvio la BD y guardamos en la sesión
 
-if (!isset($_SESSION['idUsuario'])){
+if (!isset($_SESSION['idUsuario'])){//si la sesión no tiene guardado un dato, manda a index.php
 
     header('location: index.php');
 }
@@ -17,8 +17,9 @@ $conn = $conexion->conectar();
 $query = $conn -> prepare($consulta);
 $query -> execute();
 $result = $query -> fetchAll();
+//en esta consulta recuperamos los datos del usuario
 
-$tipo='';
+$tipo='';//esta declaración no se si sea correcta o no
 
 ?>
 
@@ -53,39 +54,40 @@ $tipo='';
                         <li id="actual">Menu Principal</li>
                         <?php 
                         foreach($result as $row){
-                            $tipo=$row["tipoUsuario"];
+                            $tipo=$row["tipoUsuario"];//aqui recupero si el usuario es lector, profesor, administrador o super administrador, pero son valores entre 0-3
                         }
-                        if($tipo==0){
+                        if($tipo==0){//opciones propias del lector
                         ?>
                             <a href="./consultarInformacion.php"><li>consultar Informacion</li></a>
                         <?php }
-                        if($tipo==1){
+                        if($tipo==1){//opciones propias del profesor
                         ?>    
                             <a href="./proceso.php"><li>Proceso de practicas</li></a>
                             <a href="./misPracticas.php"><li>Mis practicas</li></a>
                             <a href="./cambiarContrasena.php"><li>Cambiar contraseña</li></a>
                         <?php }
-                        if($tipo==2){
+                        if($tipo==2){//opciones propias del administrador
                         ?>
                             <a href="./listaDeProfesores.php"><li>Profesores</li></a>
                             <a href="./proceso.php"><li>Proceso de practicas</li></a>
                             <a href="./consultarInformacion.php"><li>consultar Informacion</li></a>
                             <a href="./cambiarContrasena.php"><li>Cambiar contraseña</li></a>
                         <?php }
-                        if($tipo==3){
+                        if($tipo==3){//opciones propias del super administrador
                         ?>
                             <a href="./listaDeUsuarios.php"><li>Usuarios</li></a>
                             <a href="./proceso.php"><li>Proceso de practicas</li></a>
                             <a href="./consultarInformacion.php"><li>consultar Informacion</li></a>
                             <a href="./cambiarContrasena.php"><li>Cambiar contraseña</li></a>
                             <a href="./nuevoUsuario.php"><li>Crear Usuario</li></a>
+                            <a href="./restablecerContraseña.php"><li>Restablecer usuario</li></a><!--Este apartado hay que cambiarlo en todos los archivos, para que sea una opción del administrador, en VS si buscas ./restablecerContraseña aparecen los archivos para que cambien la opción de lugar-->
                         <?php } ?>
                     </ul>
                 </div>
                 <div class="row info">
                     <ul class="center">
                         <a href="./problema.php"><li>Reportar un problema</li></a>
-                        <a href="./index.php"><li>Info</li></a>
+                        <a href="./index.php"><li>Info</li></a><!--Por eso dije que hay que cambiar el index.php, ya que si presionas este link te regresa al index con la unica opción de iniciar sesión, seria poner los mismos if's, y un else final que devuelva solo la opción de inicio de sesion si no hay nada en la sesión-->
                     </ul>
                 </div>
             </div>
@@ -96,7 +98,7 @@ $tipo='';
                         <h1>Información del sistema</h1>
                     </div>
                     <div class="col-2">
-                        <a class="btn" id="cerrarSesion" href="destruirSesion.php">Cerrar sesion</a>
+                        <a class="btn" id="cerrarSesion" href="destruirSesion.php">Cerrar sesion</a><!--Esto manda a destruirSesion.php-->
                     </div>
                 </div>
                 <div class="row principal">
@@ -112,7 +114,7 @@ $tipo='';
                                 En caso de contar con una cuenta favor de hacer clic en una de las opciones del lado izquierdo
                                 de lo contrario por favor acude con el coordinador de practicas y visitas para poder crear una cuenta nueva
                             </p>
-                            <a href="privacidad.php">Aviso de privacidad</a>
+                            <a href="privacidad.php">Aviso de privacidad</a><!--Este link muestra el aviso de privasidad, pero no supe como estructurarlo-->
                         </div>
                     </div>
                 </div>

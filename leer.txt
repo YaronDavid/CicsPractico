@@ -1,0 +1,38 @@
+Hola compañeros, este documento tiene algunas aclaraciones sobre el programa, como dije hoy
+no voy a tener la posibilidad de continuar por el momento, así que les dejo el programa para que
+continuen. (pueden borrar este archivo si quieren)
+
+Primero
+Con respecto a lo que falta para esta fase, se deben filtrar los elementos en el siguiente orden
+1.Elegir carrera
+2.-De acuerdo a la carrera elegida deben aparecer las materias
+3.-El semestre y el nivel, para esto es necesario que Balta nos de la info que le pedimos
+sobre la relación entre materias, semestres y niveles, ya que solo nos dio los datos por
+separado, pero no sabemos como se relacionan
+
+Segundo
+Les dejo el codigo comentado de la mejor manera que pude para que lo puedan leer con mayor facilidad
+de todos modos si tienen alguna duda pueden preguntarme
+
+Tercero
+Otro apartado importante es la consulta de datos por el administrador, es decir que el
+administrador pueda ver los datos asociados a la practica para que Balta nos diga si hay
+errores o si esta todo bien.
+
+Cuarto
+El ultimo punto importante es cambiar los input de semestre unidad de aprendizaje, nivel (en numeros romanos)
+y el grupo, para esto se necesita tambien la infromación que nos dijeron que nos iban a dar
+
+Creo que son todos los puntos importantes, esto debe estar terminado para el 15 de Diciembre como maximo
+para que lo puedan probar
+
+Una ultima aclaración importante, pueden ver que hay muchos archivos css, por ejemplo "regPractica" y "regPractic" y "r"
+en local tenia el problema que no me detectaba los cambios en el css, podia borrar todo el archivo y
+los cambios se mantenian, así que los ponia en archivos diferentes.
+Los ultimos archivos son i.css, r.css, home.css, ini.css, nue.css, problema.css, nuevo.css, proceso.css y res.css
+de todos modos el "ultimo" archivo esta en las paginas, pero para que los vean y los prueben para
+que vean cual mantiene el estilo correcto
+
+:)
+
+La primer pagina que tienen que ver es index.php

@@ -1,4 +1,6 @@
 <?php
+//Esta pagina tiene que actualizarse, ya que es la misma que validar.php
+//lo que hay que cambiar es el Select por un update
 session_start();
 include_once("services/conexion.php");
 $id = $_SESSION['idUsuario'];

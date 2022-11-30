@@ -26,8 +26,11 @@
             <div class="col-2 aside">
                 <div class="row opciones">
                     <ul class="center">
-                        <a href="./inicioDeSesion.php"><li>Iniciar Sesion</li></a>
-                        <li id="actual">Restablecer Contraseña</li>
+                        <a href="./listaDeUsuarios.php"><li>Usuarios</li></a>
+                        <a href="./proceso.php"><li>Proceso de practicas</li></a>
+                        <a href="./consultarInformacion.php"><li>consultar Informacion</li></a>
+                        <a href="./cambiarContrasena.php"><li>Cambiar contraseña</li></a>
+                        <li id="actual">Restablecer usuario</li>
                     </ul>
                 </div>
                 <div class="row info">

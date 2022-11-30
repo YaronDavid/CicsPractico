@@ -1,3 +1,8 @@
+<!--Aqui esta el formulario de inicio de sesión, no tiene mucho
+ya que elimine el apartado de "restablecer contraseña" ya que esa opcion esta
+unicamente habilitada para el super adminitrador
+-->
+
 <html>
     <head> 
         <title>
@@ -27,7 +32,6 @@
                 <div class="row opciones">
                     <ul class="center">
                         <li id="actual" class="boton">Inicio de sesion</li>
-                        <a href="./restablecerContraseña.php"><li>Restablecer contraseña</li></a>
                     </ul>
                 </div>
                 <div class="row info">
@@ -45,7 +49,7 @@
                     <div class="container">
                         <div class="mycard">
                             
-                            <form action="validar.php" method="post">
+                            <form action="validar.php" method="post"><!--El fomulario manda a validar para saber si la sesión existe-->
                                 <div class="form-group">
                                     <label for="correo">Correo</label>
                                     <input class="form-control"type="text" id="correo" name="correo" required/>
@@ -55,7 +59,7 @@
                                     <input class="form-control" type="text" id="contrasena" name="contrasena" required/>
                                 </div><br/>
                                     <input type="submit" value="Iniciar sesión" class="btn btn-primary"/>
-                                    <a href="./restablecer.php" class="res">No recuerdo mi contraseña</a>
+                                    
                                 </div>
                             </form>
                         </div>

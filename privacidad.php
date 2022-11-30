@@ -1,0 +1,1 @@
+<!--En esta pagina hay que mostrar el aviso de privacidad y un link que lleve a home.php-->

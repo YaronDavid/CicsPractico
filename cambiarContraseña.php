@@ -1,5 +1,8 @@
 <?php
 session_start();
+//el proceso de recuperar la sesión, consultar los datos se hace en todas las paginas ya que es necesario saber que tipo de usuario es
+//por el aside, no se si sea más conveniente cambiar ese proceso por guardar directamente el tipoUsuario (y toda la info del usuario)
+//en la sesión
 include_once("services/conexion.php");
 $id = $_SESSION['idUsuario'];
 
@@ -21,7 +24,9 @@ $result = $query -> fetchAll();
 $tipo='';
 
 ?>
-
+<!--Esta pagina permite al usuario cambiar su contraseña
+Ya que es un poco dificil recordar la contraseña de 8 caracteres generada
+por el programa-->
 <html>
     <head> 
         <title>
@@ -70,7 +75,7 @@ $tipo='';
                             <a href="./listaDeProfesores.php"><li>Profesores</li></a>
                             <a href="./proceso.php"><li>Proceso de practicas</li></a>
                             <a href="./consultarInformacion.php"><li>consultar Informacion</li></a>
-                            <a href="./cambiarContrasena.php"><li>Cambiar contraseña</li></a>
+                            <li id="actual">Cambiar contraseña</li>
                         <?php }
                         if($tipo==3){
                         ?>
@@ -78,6 +83,7 @@ $tipo='';
                             <a href="./proceso.php"><li>Proceso de practicas</li></a>
                             <a href="./consultarInformacion.php"><li>consultar Informacion</li></a>
                             <a href="./cambiarContrasena.php"><li>Cambiar contraseña</li></a>
+                            <a href="./restablecerContraseña.php"><li>Restablecer usuario</li></a>
                         <?php } ?>
                     </ul>
                 </div>
@@ -114,8 +120,7 @@ $tipo='';
                                     <label for="vefiricar">Repita nueva contraseña</label>
                                     <input class="form-control" type="text" id="verificar" name="verificar" required/>
                                 </div><br/>
-                                    <input type="submit" value="Iniciar sesión" class="btn btn-primary"/>
-                                    <a href="./restablecer.php" class="res">No recuerdo mi contraseña</a>
+                                    
                                 </div>
                             </form>
                         </div>

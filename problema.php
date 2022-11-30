@@ -1,4 +1,5 @@
 <?php
+//esta pagina tiene el formulario de "reportar un problema" aunque el prfmulario de momento no se envia a ninguna parte
 session_start();
 include_once("services/conexion.php");
 $id = $_SESSION['idUsuario'];
@@ -78,6 +79,7 @@ $tipo='';
                             <a href="./proceso.php"><li>Proceso de practicas</li></a>
                             <a href="./consultarInformacion.php"><li>consultar Informacion</li></a>
                             <a href="./cambiarContrasena.php"><li>Cambiar contraseña</li></a>
+                            <a href="./restablecerContraseña.php"><li>Restablecer usuario</li></a>
                         <?php } ?>
                     </ul>
                 </div>

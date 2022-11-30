@@ -32,6 +32,7 @@
                             <a href="./consultarInformacion.php"><li>consultar Informacion</li></a>
                             <a href="./cambiarContrasena.php"><li>Cambiar contraseña</li></a>
                             <li id="actual">Crear Usuario</li>
+                            <a href="./restablecerContraseña.php"><li>Restablecer usuario</li></a>
                     </ul>
                 </div>
                 <div class="row info">
@@ -90,13 +91,24 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <?php 
+                                    $num = '0123456789';
+                                    $min = 'abcdefghijklmnopqrstuvwxyz';
+                                    $may = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                                    //en las 3 siguientes filas obtengo un numero, una minuscula y una mayuscula aleatorias, para segurar que siempre haya 1 de cada uno
+                                    $sal = substr(str_shuffle($num), 0, 1);
+                                    $sal = $sal.substr(str_shuffle($min), 0, 1);
+                                    $sal = $sal.substr(str_shuffle($may), 0, 1);
+                                    //esta ultima ya realiza la obtencion de 5 caracteres aleatorios entre, numero, mayusculas o minusculas
+                                    $sal = $sal.substr(str_shuffle($min.$may.$num), 0, 5);
+                                ?>
                                 <label for="contrasena">Contraseña</label>
-                                <input class="form-control" type="text" id="contrasena" name="contrasena" required/>
+                                <?php
+                                    //este echo devuelve el input con la contraseña, al estar desabilitado, no la puede cambiar
+                                    echo "<input class='form-control' type='text' id='contrasena' name='contrasena' value=$sal required disabled/>";
+                                ?>    
                             </div>
-                            <div class="form-group">
-                                <label for="contrasenaRep">Repita contraseña</label>
-                                <input class="form-control" type="text" id="contrasenaRep" name="contrasenaRep" required/>
-                            </div><br/>
+                            <br/>
                             <div class="form-group row">
                                 <div class="col-4">
                                     <label for="pregunta">Elija su pregunta de seguridad</label></br>

@@ -19,12 +19,13 @@ $competencia = $_POST["competencia"];
 $estrategias = $_POST["estrategias"];
 $objetivo = $_POST["objetivo"];
 $link = $_POST["link"];
-$actual = date("Y-m-d H:i:s"); 
+$actual = date("Y-m-d H:i:s"); //la fecha actual, que agrego en fechaCreación y fechaModificación
 $estatus=0;
 $presupuesto=0;
+//el presupuesto lo dejo en 0 ya que este se asignará hasta que se termine el periodo de registro de practicas
 
 
-$consulta = "SELECT MAX(idPractica) as idPractica FROM practica";
+$consulta = "SELECT MAX(idPractica) as idPractica FROM practica";//como en mi BD no puse el id autoincremental, lo hago manualmente
 $query = $conn -> prepare($consulta);
 $query -> execute();
 $result = $query -> fetchAll();
@@ -37,7 +38,7 @@ if($result){
     $id=1;
 }
 
-$consulta = "SELECT MAX(idFundamento) as idFundamento FROM practica WHERE idPractica=$id";
+$consulta = "SELECT MAX(idFundamento) as idFundamento FROM practica WHERE idPractica=$id";//Aqui obtengo el ultimo fundamento, este se usará en caso de que se tenga que registrar la misma practica, pero con otro fundamento, aunque esto no iria aquí
 $query = $conn -> prepare($consulta);
 $query -> execute();
 $result = $query -> fetchAll();
@@ -50,7 +51,7 @@ if($result){
     $idFundamento=1;
 }
 
-$consulta = "SELECT idCarrera FROM programaAcademico WHERE nombreCarrera='$carrera'";
+$consulta = "SELECT idCarrera FROM programaAcademico WHERE nombreCarrera='$carrera'";//select para obtener el id con el nombre
 $query = $conn -> prepare($consulta);
 $query -> execute();
 $result = $query -> fetchAll();
@@ -60,7 +61,7 @@ if($result){
     }
 }
 
-$consulta = "SELECT idUA FROM ua WHERE nombreUA='$nombreUA' AND nivelUA=$nivel AND semestreUA=$semestre AND idCarrera=$idCarrera";
+$consulta = "SELECT idUA FROM ua WHERE nombreUA='$nombreUA' AND nivelUA=$nivel AND semestreUA=$semestre AND idCarrera=$idCarrera";//aqui recogo el id de la UA, con los datos de nombre, semestre, nivel y carrera
 $query = $conn -> prepare($consulta);
 $query -> execute();
 $result = $query -> fetchAll();
@@ -70,7 +71,7 @@ if($result){
     }
 }
 
-$consulta = "SELECT idLocalidad FROM localidad WHERE estado='$EF'";
+$consulta = "SELECT idLocalidad FROM localidad WHERE estado='$EF'";//aqui obtengo el id con el nombre de la Entidad Federativa
 $query = $conn -> prepare($consulta);
 $query -> execute();
 $result = $query -> fetchAll();
@@ -80,14 +81,15 @@ if($result){
     }
 }
 
-$idBitacora=$_SESSION["idBitacora"];
-$idProf = $_SESSION["idUsuario"];
+$idBitacora=$_SESSION["idBitacora"];//en proceso guarde la botacora actual en la sesión y aquí lo recupero
+$idProf = $_SESSION["idUsuario"];//el id del usuario lo recupero de la sesión
 
-
+//con todos los datos realizo el insert en la BD
 $insertar =  "INSERT INTO practica VALUES ($id,$idFundamento,'$actual','$actual','$fecha','$grupo',$estatus,$presupuesto,'$objetivo','$competencia','$estrategias',$idUA,$idLocalidad,$idBitacora,$idProf,'$link','$RS',$alumnos)";
 $query = $conn -> prepare($insertar);
 $query -> execute();
 
+//este echo debería imprimir este alert, pero no funciona :(
 echo '<script type="text/javascript">
             alert("practica creada exitosamente");
           </script>';

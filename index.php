@@ -1,3 +1,12 @@
+<!-- Este es la pagina de inicio, esta asociado a la pestaña "info" del aside
+hay que agregar el
+session_start();
+include_once("services/conexion.php");
+$id = $_SESSION['idUsuario'];
+y en la pagina de home.php explicare porque
+en esta página solo aparece el inicioDeSesion.php
+-->
+
 <html>
     <head> 
         <title>
@@ -26,7 +35,7 @@
                 <div class="row opciones">
                     <ul class="center">
                         <a href="./inicioDeSesion.php"><li class="boton">Inicio de sesion</li></a>
-                        <a href="./restablecerContraseña.php"><li>Restablecer contraseña</li></a>
+                        
                     </ul>
                 </div>
                 <div class="row info">

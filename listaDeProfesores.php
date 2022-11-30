@@ -18,7 +18,7 @@ $query = $conn -> prepare($consulta);
 $query -> execute();
 $result = $query -> fetchAll();
 
-$idUsuario=0;
+$idUsuario=0;//esto solo es una declaración, no se si sea correcta
 
 ?>
 
@@ -103,7 +103,7 @@ $idUsuario=0;
                                                 $idUsuario=$row["idUsuario"];
                                         ?>
                                                 <tr>
-                                                    <td><?php echo $idUsuario?></td>
+                                                    <td><?php echo $idUsuario?></td><!--En la tabla dice "Nombre", pero al recuperar el nombre me daba error, por eso deje el id-->
 
                                                     
                                                     <td><a href="./editarUsuario">Editar</a></td>

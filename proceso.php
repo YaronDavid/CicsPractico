@@ -75,6 +75,7 @@ $tipo='';
                             <a href="./consultarInformacion.php"><li>consultar Informacion</li></a>
                             <a href="./cambiarContrasena.php"><li>Cambiar contraseña</li></a>
                             <a href="./nuevoUsuario.php"><li>Crear Usuario</li></a>
+                            <a href="./restablecerContraseña.php"><li>Restablecer usuario</li></a>
                         <?php } ?>
                     </ul>
                 </div>

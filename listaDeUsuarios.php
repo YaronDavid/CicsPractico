@@ -18,6 +18,7 @@ $query = $conn -> prepare($consulta);
 $query -> execute();
 $result = $query -> fetchAll();
 
+//2 declaraciónes
 $tipo=0;
 $idUsuario=0;
 
@@ -100,8 +101,9 @@ $idUsuario=0;
                                     <tbody>
                                         <?php
                                             foreach($result as $row){
-                                                $tipo=$row["tipoUsuario"];
-                                                $nombre=$row["nombre"];
+                                                $tipo=$row["tipoUsuario"];//aqui recojo el tipo de usuario
+                                                $nombre=$row["nombre"];//aqui recojo el nombre
+                                                //como el tipo es numerico, estos if's los convierten en texto
                                                 if($tipo==0){
                                                     $tipo="Lector";
                                                 }if($tipo==1){
@@ -111,7 +113,7 @@ $idUsuario=0;
                                                 }
                                         ?>
                                                 <tr>
-                                                    <td><?php echo $nombre?></td>
+                                                    <td><?php echo $nombre?></td><!--Estas 2 filas estan dentro del for, por lo que imprime todos los nombres y tipos de usuario de la BD-->
                                                     <td><?php echo $tipo?></td>
                                                     
                                                     <td><a href="./editarUsuario">Editar</a></td>

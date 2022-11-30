@@ -7,9 +7,10 @@ if (!isset($_SESSION['idUsuario'])){
 
     header('location: index.php');
 }
-
+//como el unico que puede acceder a está pagina es un profesor, en este caso no se hace el select
+//que se habia hecho en otras paginas
 ?>
-
+<!--Esta pagina tiene el formulario de creación de una nueva practica-->
 <html>
     <head> 
         <title>
@@ -67,19 +68,19 @@ if (!isset($_SESSION['idUsuario'])){
                         <form action="crearPractica.php" method="post" id="nuevaPractica">
                             <div class="form-group row">
                                 <div class="col-6">
-                                        <label for="nombreUA">Unidad de aprendizaje</label>
+                                        <label for="nombreUA">Unidad de aprendizaje</label><!--Esto debe cambiar a un select y cambiar con respecto a lo selecionado anteriormente-->
                                         <input class="form-control" type="text" id="nombreUA" name="nombreUA" required/>
                                 </div>
                                 <div class="col-6">
-                                        <label for="semestre">Semestre</label>
+                                        <label for="semestre">Semestre</label><!--Esto debe cambiar a un select y cambiar con respecto a lo selecionado anteriormente-->
                                         <input class="form-control" type="text" id="semestre" name="semestre" required/>
                                 </div>
                                 <div class="col-6">
-                                        <label for="nivel">Nivel</label>
+                                        <label for="nivel">Nivel</label><!--Esto debe cambiar a un select y cambiar con respecto a lo selecionado anteriormente-->
                                         <input class="form-control" type="text" id="nivel" name="nivel" required/>
                                 </div>
                                 <div class="col-6">
-                                        <label for="carrera">Carrera</label>
+                                        <label for="carrera">Carrera</label><!--Esto debe cambiar ser el primer select en el formulario, además de poder cambiar los value, por el id, no por el nombre aunque eso solo seria poner el select aqui y no en la ventana siguiente-->
                                         <select class="form-control" name="carrera" id="carrera" form="nuevaPractica">
                                             <option value="" disabled selected>Seleccione una opcion</option>
                                             <option value="odontologia">Odontología</option>
@@ -99,6 +100,8 @@ if (!isset($_SESSION['idUsuario'])){
                             </div>
                             <div class="form-group row">
                                 <div class="col-6">
+                                <!--Esto hay que cambiarlo por lo que este registrado en la BD
+                                además se podría cambiar los value en lugar del nombre el Id directamente-->
                                 <label for="EF">Entidad Federativa</label>
                                     <select class="form-control" name="EF" id="EF" form="nuevaPractica">
                                         <option value="" disabled selected>Seleccione una opcion</option>
@@ -137,13 +140,11 @@ if (!isset($_SESSION['idUsuario'])){
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">
+                                    <!--Este se elimina-->
                                     <label for="link">Link con portafolio de los alumnos</label>
                                     <input class="form-control" type="text" name="link" id="link" required/>
                                 </div>
-                                <div class="col-12">
-                                    <label for="archivo">Archivo excel con nombre/boleta/NSS de los alumnos</label>
-                                    <input class="form-control" type="text" name="archivo" id="archivo" required/>
-                                </div>
+                                
                             </div><br/>
                                     <a href="./home.php" class="res">Regresar</a>
                                     <input type="submit" value="Registrar Practica" class="btn btn-primary"/>
